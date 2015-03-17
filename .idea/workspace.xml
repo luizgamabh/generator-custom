@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58ae5a4f-21c1-4a9b-a66a-3a1016cd7ab2" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\404.html" afterPath="" />
-      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\tile-wide.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\tile.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/h5bp/browserconfig.xml" afterPath="$PROJECT_DIR$/app/templates/h5bp/browserconfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/h5bp/index.html" afterPath="$PROJECT_DIR$/app/templates/h5bp/index.html" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\doc\TOC.md" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\doc\css.md" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\doc\extend.md" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\doc\faq.md" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\doc\html.md" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\doc\js.md" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\doc\misc.md" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\doc\usage.md" afterPath="" />
+      <change type="DELETED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\img\.gitignore" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.js" afterPath="$PROJECT_DIR$/app/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/h5bp/sass/main.scss" afterPath="$PROJECT_DIR$/app/templates/h5bp/sass/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\.editorconfig" afterPath="$PROJECT_DIR$/app/templates/h5bp/editorconfig" />
-      <change type="MOVED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\.gitattributes" afterPath="$PROJECT_DIR$/app/templates/h5bp/gitattributes" />
-      <change type="MOVED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\.gitignore" afterPath="$PROJECT_DIR$/app/templates/h5bp/gitignore" />
-      <change type="MOVED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\.htaccess" afterPath="$PROJECT_DIR$/app/templates/h5bp/htaccess" />
-      <change type="MOVED" beforePath="E:\www\generator\generator-custom\app\templates\h5bp\sass\_compass.sass" afterPath="$PROJECT_DIR$/app/templates/h5bp/sass/_initializer.sass" />
     </list>
     <ignored path="generator-custom.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,94 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="973" max-vertical-offset="2108">
-              <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="browserconfig.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/h5bp/browserconfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/h5bp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="765">
-              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_bower.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/_bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="204">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/h5bp/sass/generic/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2666667" vertical-offset="0" max-vertical-offset="187">
-              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_normalize.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/h5bp/sass/generic/_normalize.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="7361">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/templates/h5bp/sass/main.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2509047" vertical-offset="1441" max-vertical-offset="4794">
-              <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_compass-dev.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/_compass-dev.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.68" vertical-offset="0" max-vertical-offset="119">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_compass-dist.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/_compass-dist.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.68" vertical-offset="0" max-vertical-offset="119">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.86477274" vertical-offset="1551" max-vertical-offset="2754">
+              <caret line="136" column="52" selection-start-line="136" selection-start-column="52" selection-end-line="136" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -152,9 +67,9 @@
         <option value="$PROJECT_DIR$/app/templates/_compass-dist.rb" />
         <option value="$PROJECT_DIR$/app/templates/h5bp/sass/_compass.sass" />
         <option value="$PROJECT_DIR$/app/templates/h5bp/index.html" />
-        <option value="$PROJECT_DIR$/app/index.js" />
         <option value="$PROJECT_DIR$/app/templates/h5bp/browserconfig.xml" />
         <option value="$PROJECT_DIR$/app/templates/h5bp/sass/main.scss" />
+        <option value="$PROJECT_DIR$/app/index.js" />
       </list>
     </option>
   </component>
@@ -260,32 +175,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="h5bp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generator-custom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generator-custom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="h5bp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -572,7 +461,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/_compass-dev.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.68" vertical-offset="0" max-vertical-offset="119">
+        <state vertical-scroll-proportion="0.01988304" vertical-offset="0" max-vertical-offset="855">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
@@ -580,43 +469,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/_compass-dist.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.68" vertical-offset="0" max-vertical-offset="119">
+        <state vertical-scroll-proportion="0.01988304" vertical-offset="0" max-vertical-offset="855">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/img/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/doc/css.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.68" vertical-offset="1428" max-vertical-offset="2856">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/_bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="765">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -647,24 +509,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/h5bp/htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.64705884" vertical-offset="561" max-vertical-offset="15997">
+        <state vertical-scroll-proportion="-1.7058823" vertical-offset="1479" max-vertical-offset="15997">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="973" max-vertical-offset="2108">
-          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/browserconfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -679,8 +525,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/h5bp/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2509047" vertical-offset="1441" max-vertical-offset="4794">
-          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.26176116" vertical-offset="1466" max-vertical-offset="4794">
+          <caret line="99" column="14" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/js/plugins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/js/vendor/modernizr-2.8.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05882353" vertical-offset="0" max-vertical-offset="867">
+          <caret line="3" column="9674" selection-start-line="3" selection-start-column="9670" selection-end-line="3" selection-end-column="9674" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/browserconfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09953161" vertical-offset="0" max-vertical-offset="854">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/h5bp/robots.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.86477274" vertical-offset="1551" max-vertical-offset="2754">
+          <caret line="136" column="52" selection-start-line="136" selection-start-column="52" selection-end-line="136" selection-end-column="52" />
           <folding />
         </state>
       </provider>

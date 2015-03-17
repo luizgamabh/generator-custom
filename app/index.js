@@ -47,27 +47,6 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('_bower.json'),
         this.destinationPath('bower.json')
       );
-
-      this.mkdir('resources');
-      this.mkdir('resources/sass');
-      this.mkdir('resources/js');
-      this.mkdir('resources/copy');
-      this.mkdir('resources/font');
-      this.mkdir('resources/html');
-      this.mkdir('resources/img');
-      this.mkdir('resources/sprite');
-
-      this.fs.directory(
-        this.templatePath('h5bp/sass'),
-        this.destinationPath('resources/sass')
-      );
-      this.fs.directory(
-        this.templatePath('h5bp/js'),
-        this.destinationPath('resources/js')
-      );
-    },
-
-    projectfiles: function () {
       this.fs.copy(
         this.templatePath('_compass-dev.rb'),
         this.destinationPath('compass-dev.rb')
@@ -96,14 +75,73 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('jshintrc'),
         this.destinationPath('.jshintrc')
       );
+    },
+
+    projectfiles: function () {
+
+      this.mkdir('resources');
+      this.mkdir('resources/sass');
+      this.mkdir('resources/js');
+      this.mkdir('resources/copy');
+      this.mkdir('resources/font');
+      this.mkdir('resources/html');
+      this.mkdir('resources/img');
+      this.mkdir('resources/sprite');
+
+      this.fs.directory(
+        this.templatePath('h5bp/sass'),
+        this.destinationPath('resources/sass')
+      );
+      this.fs.directory(
+        this.templatePath('h5bp/js'),
+        this.destinationPath('resources/js')
+      );
+
+      this.fs.copy(
+        this.templatePath('h5bp/browserconfig.xml'),
+        this.destinationPath('resources/copy/browserconfig.xml')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/crossdomain.xml'),
+        this.destinationPath('resources/copy/crossdomain.xml')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/favicon.ico'),
+        this.destinationPath('resources/copy/favicon.ico')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/humans.txt'),
+        this.destinationPath('resources/copy/humans.txt')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/robots.txt'),
+        this.destinationPath('resources/copy/robots.txt')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/tile-large.png'),
+        this.destinationPath('resources/copy/tile-large.png')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/tile-medium.png'),
+        this.destinationPath('resources/copy/tile-medium.png')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/tile-wide.png'),
+        this.destinationPath('resources/copy/tile-wide.png')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/tile-small.png'),
+        this.destinationPath('resources/copy/tile-small.png')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/apple-touch-icon.png'),
+        this.destinationPath('')
+      );
       this.fs.copyTpl(
         this.templatePath('h5bp/index.html'),
         this.destinationPath('resources/index.html'),
         { title: this.appname }
       );
-      this.fs.copyTpl(
-        this.templatePath('h5bp/')
-      )
     }
   },
 
