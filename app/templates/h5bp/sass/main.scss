@@ -95,21 +95,14 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@import "compass"
+@import "settings/**/*";
+@import "tools/**/*";
+@import "generic/**/*";
+@import "vendor/**/*";
+@import "base/**/*";
+@import "objects/**/*";
+@import "partials/**/*";
 
 /* ==========================================================================
    Helper classes
