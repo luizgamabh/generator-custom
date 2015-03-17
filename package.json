@@ -1,0 +1,33 @@
+{
+  "name": "generator-custom",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "luizgamabh/generator-custom",
+  "author": {
+    "name": "Luiz Gustavo Freire Gama",
+    "email": "luizgama@onrails.com.br",
+    "url": "https://github.com/luizgamabh"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "yeoman-generator": "^0.18.10",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
