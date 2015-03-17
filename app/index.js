@@ -77,13 +77,33 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('compass-dist.rb')
       );
       this.fs.copy(
-        this.templatePath('h5bp/.editorconfig'),
+        this.templatePath('h5bp/gitattributes'),
+        this.destinationPath('.gitattributes')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/gitignore'),
+        this.destinationPath('.gitignore')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/htaccess'),
+        this.destinationPath('.htaccess')
+      );
+      this.fs.copy(
+        this.templatePath('h5bp/editorconfig'),
         this.destinationPath('.editorconfig')
       );
       this.fs.copy(
         this.templatePath('jshintrc'),
         this.destinationPath('.jshintrc')
       );
+      this.fs.copyTpl(
+        this.templatePath('h5bp/index.html'),
+        this.destinationPath('resources/index.html'),
+        { title: this.appname }
+      );
+      this.fs.copyTpl(
+        this.templatePath('h5bp/')
+      )
     }
   },
 
@@ -91,5 +111,8 @@ module.exports = yeoman.generators.Base.extend({
     this.installDependencies({
       skipInstall: this.options['skip-install']
     });
+  },
+
+  end: function() {
   }
 });
