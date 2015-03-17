@@ -61,6 +61,10 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('h5bp/sass'),
         this.destinationPath('resources/sass')
       );
+      this.fs.directory(
+        this.templatePath('h5bp/js'),
+        this.destinationPath('resources/js')
+      );
     },
 
     projectfiles: function () {

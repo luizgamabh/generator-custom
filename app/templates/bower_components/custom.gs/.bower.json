@@ -1,0 +1,31 @@
+{
+  "name": "custom.gs",
+  "homepage": "http://custom.gs",
+  "authors": [
+    "Luiz Gustavo Freire Gama <luizgamabh@gmail.com>"
+  ],
+  "description": "Custom Grid System",
+  "main": "_custom.scss",
+  "keywords": [
+    "grid",
+    "responsive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "259944cd44",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "259944cd44b903e3242178681ccb818f0618a600"
+  },
+  "_source": "git://github.com/luizgamabh/custom.gs.git",
+  "_target": "*",
+  "_originalSource": "luizgamabh/custom.gs",
+  "_direct": true
+}
