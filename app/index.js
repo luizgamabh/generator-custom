@@ -1,156 +1,169 @@
 'use strict';
+var join = require('path').join;
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
-var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
-  constructor: function() {
-    generators.Base.apply(this, arguments);
-    this.argument('appname', {type: String, required: true});
-    this.appname = this._.camelize(this.appname);
-  },
+  constructor: function () {
+    yeoman.generators.Base.apply(this, arguments);
 
-  initializing: function () {
     this.pkg = require('../package.json');
   },
 
-  prompting: function () {
+  askFor: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the ' + chalk.red('custom') + ' generator!'
-    ));
+    // welcome message
+    if (!this.options['skip-welcome-message']) {
+      this.log(require('yosay')());
+      this.log(chalk.magenta(
+        'Thanks for using Custom Generator.'
+      ));
+    }
 
     var prompts = [{
       type: 'confirm',
-      name: 'customGsOption',
-      message: 'Would you like to enable custom grid system?',
-      default: true,
-      store: true // saves the answer
-    }];
+      name: 'includeCustom',
+      message: 'Use custom grid system?',
+      default: true
+    }
+    //  {
+    //  type: 'list',
+    //  name: 'features',
+    //  message: 'Select your preferred grid system',
+    //  choices: [{
+    //    name: 'Custom.gs',
+    //    value: 'includeCustom',
+    //    checked: true
+    //  },{
+    //    name: 'Bootstrap',
+    //    value: 'includeBootstrap',
+    //    checked: false
+    //  }]
+    //}
+    ];
 
-    this.prompt(prompts, function (props) {
-      this.customGsOption = props.customGsOption;
+    this.prompt(prompts, function (answers) {
+      //var features = answers.features;
+
+      //function hasFeature(feat) {
+      //  return features && features.indexOf(feat) !== -1;
+      //}
+
+      this.includeCustom = answers.includeCustom;
 
       done();
     }.bind(this));
   },
 
-  writing: {
-    app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
-      this.fs.copy(
-        this.templatePath('_compass-dev.rb'),
-        this.destinationPath('compass-dev.rb')
-      );
-      this.fs.copy(
-        this.templatePath('_compass-dist.rb'),
-        this.destinationPath('compass-dist.rb')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/gitattributes'),
-        this.destinationPath('.gitattributes')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/gitignore'),
-        this.destinationPath('.gitignore')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/htaccess'),
-        this.destinationPath('.htaccess')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/editorconfig'),
-        this.destinationPath('.editorconfig')
-      );
-      this.fs.copy(
-        this.templatePath('jshintrc'),
-        this.destinationPath('.jshintrc')
-      );
-    },
-
-    projectfiles: function () {
-
-      this.mkdir('resources');
-      this.mkdir('resources/sass');
-      this.mkdir('resources/js');
-      this.mkdir('resources/copy');
-      this.mkdir('resources/font');
-      this.mkdir('resources/html');
-      this.mkdir('resources/img');
-      this.mkdir('resources/sprite');
-
-      this.fs.directory(
-        this.templatePath('h5bp/sass'),
-        this.destinationPath('resources/sass')
-      );
-      this.fs.directory(
-        this.templatePath('h5bp/js'),
-        this.destinationPath('resources/js')
-      );
-
-      this.fs.copy(
-        this.templatePath('h5bp/browserconfig.xml'),
-        this.destinationPath('resources/copy/browserconfig.xml')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/crossdomain.xml'),
-        this.destinationPath('resources/copy/crossdomain.xml')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/favicon.ico'),
-        this.destinationPath('resources/copy/favicon.ico')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/humans.txt'),
-        this.destinationPath('resources/copy/humans.txt')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/robots.txt'),
-        this.destinationPath('resources/copy/robots.txt')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/tile-large.png'),
-        this.destinationPath('resources/copy/tile-large.png')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/tile-medium.png'),
-        this.destinationPath('resources/copy/tile-medium.png')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/tile-wide.png'),
-        this.destinationPath('resources/copy/tile-wide.png')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/tile-small.png'),
-        this.destinationPath('resources/copy/tile-small.png')
-      );
-      this.fs.copy(
-        this.templatePath('h5bp/apple-touch-icon.png'),
-        this.destinationPath('')
-      );
-      this.fs.copyTpl(
-        this.templatePath('h5bp/index.html'),
-        this.destinationPath('resources/index.html'),
-        { title: this.appname }
-      );
-    }
+  gruntfile: function () {
+    this.template('Gruntfile.js');
   },
 
-  install: function () {
-    this.installDependencies({
-      skipInstall: this.options['skip-install']
+  packageJSON: function () {
+    this.template('_package.json', 'package.json');
+  },
+
+  git: function () {
+    this.template('gitignore', '.gitignore');
+    this.copy('gitattributes', '.gitattributes');
+  },
+
+  bower: function () {
+    var bower = {
+      name: this._.slugify(this.appname),
+      private: true,
+      dependencies: {}
+    };
+
+    if (this.includeBootstrap) {
+      var bs = 'bootstrap-sass-official' : '');
+      bower.dependencies[bs] = '~3.2.0';
+    } else {
+      bower.dependencies.jquery = '~1.11.1';
+    }
+
+    if (this.includeModernizr) {
+      bower.dependencies.modernizr = '~2.8.2';
+    }
+
+    this.copy('bowerrc', '.bowerrc');
+    this.write('bower.json', JSON.stringify(bower, null, 2));
+  },
+
+  jshint: function () {
+    this.copy('jshintrc', '.jshintrc');
+  },
+
+  editorConfig: function () {
+    this.copy('editorconfig', '.editorconfig');
+  },
+
+  mainStylesheet: function () {
+    var css = 'main.sass';
+    this.template(css, 'app/styles/' + css);
+  },
+
+  writeIndex: function () {
+    this.indexFile = this.engine(
+      this.readFileAsString(join(this.sourceRoot(), 'index.html')),
+      this
+    );
+
+    // wire Bootstrap plugins
+    if (this.includeBootstrap) {
+      var bs = 'bower_components/bootstrap/js/';
+
+      this.indexFile = this.appendFiles({
+        html: this.indexFile,
+        fileType: 'js',
+        optimizedPath: 'scripts/plugins.js',
+        sourceFileList: [
+          bs + 'affix.js',
+          bs + 'alert.js',
+          bs + 'dropdown.js',
+          bs + 'tooltip.js',
+          bs + 'modal.js',
+          bs + 'transition.js',
+          bs + 'button.js',
+          bs + 'popover.js',
+          bs + 'carousel.js',
+          bs + 'scrollspy.js',
+          bs + 'collapse.js',
+          bs + 'tab.js'
+        ],
+        searchPath: '.'
+      });
+    }
+
+    this.indexFile = this.appendFiles({
+      html: this.indexFile,
+      fileType: 'js',
+      optimizedPath: 'scripts/main.js',
+      sourceFileList: ['scripts/main.js'],
+      searchPath: ['app', '.tmp']
     });
   },
 
-  end: function() {
+  app: function () {
+    this.directory('app');
+    this.mkdir('app/scripts');
+    this.mkdir('app/styles');
+    this.mkdir('app/images');
+    this.write('app/index.html', this.indexFile);
+
+    this.copy('main.js', 'app/scripts/main.js');
+  },
+
+  install: function () {
+    this.on('end', function () {
+
+      if (!this.options['skip-install']) {
+        this.installDependencies({
+          skipMessage: this.options['skip-install-message'],
+          skipInstall: this.options['skip-install']
+        });
+      }
+    });
   }
 });
