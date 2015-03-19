@@ -22,35 +22,75 @@ module.exports = yeoman.generators.Base.extend({
     }
 
     var prompts = [{
-      type: 'confirm',
-      name: 'includeCustom',
-      message: 'Use custom grid system?',
-      default: true
-    }
-    //  {
-    //  type: 'list',
-    //  name: 'features',
-    //  message: 'Select your preferred grid system',
-    //  choices: [{
-    //    name: 'Custom.gs',
-    //    value: 'includeCustom',
-    //    checked: true
-    //  },{
-    //    name: 'Bootstrap',
-    //    value: 'includeBootstrap',
-    //    checked: false
-    //  }]
-    //}
-    ];
+    type: 'list',
+    name: 'features',
+    message: 'Select the features you would like to add',
+    choices: [{
+      name: 'Modernizr',
+      value: 'includeModernizr',
+      checked: true
+    },{
+      name: 'Selectivizr',
+      value: 'includeSelectivizr',
+      checked: true
+    },{
+      name: 'Custom Grid System',
+      value: 'includeCustom',
+      checked: true
+    },{
+      name: 'jQuery Easing',
+      value: 'includeJQueryEasing',
+      checked: true
+    },{
+      name: 'jQuery Bezier',
+      value: 'includeJQueryBezier',
+      checked: false
+    },{
+      name: 'jQuery Mousewheel',
+      value: 'includeJQueryMousewheel',
+      checked: true
+    },{
+      name: 'Nicescroll',
+      value: 'includeNicescroll', // falta jogar no bower e pimba ;D
+      checked: true
+    },{
+      name: 'jQuery Hotkeys',
+      value: 'includeJQueryHotkeys',
+      checked: false
+    },{
+      name: 'UniqueId',
+      value: 'includeUniqueId',
+      checked: false
+    },{
+      name: 'jQuery Advanced Scroll',
+      value: 'includeJQueryAdvancedScroll',
+      checked: false
+    },{
+      name: 'jQuery Advanced Break',
+      value: 'includeJQueryAdvancedBreak',
+      checked: false
+    }]
+    }];
 
     this.prompt(prompts, function (answers) {
-      //var features = answers.features;
+      var features = answers.features;
 
-      //function hasFeature(feat) {
-      //  return features && features.indexOf(feat) !== -1;
-      //}
+      function hasFeature(feat) {
+        return features && features.indexOf(feat) !== -1;
+      }
 
       this.includeCustom = answers.includeCustom;
+      this.includeModernizr = hasFeature('includeModernizr');
+      this.includeSelectivizr = hasFeature('includeSelectivizr');
+      this.includeCustom = hasFeature('includeCustom');
+      this.includeJQueryEasing = hasFeature('includeJQueryEasing');
+      this.includeJQueryBezier = hasFeature('includeJQueryBezier');
+      this.includeJQueryMousewheel = hasFeature('includeJQueryMousewheel');
+      this.includeNicescroll = hasFeature('includeNicescroll');
+      this.includeJQueryHotkeys = hasFeature('includeJQueryHotkeys');
+      this.includeUniqueId = hasFeature('includeUniqueId');
+      this.includeJQueryAdvancedScroll = hasFeature('includeJQueryAdvancedScroll');
+      this.includeJQueryAdvancedBreak = hasFeature('includeJQueryAdvancedBreak');
 
       done();
     }.bind(this));

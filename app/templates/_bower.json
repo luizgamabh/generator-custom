@@ -9,7 +9,9 @@
     "jquery.hotkeys": "jeresig/jquery.hotkeys#~0.2.0",
     "uniqueid": "~0.0.1",
     "jquery.advancedscroll": "~0.0.1",
-    "jquery.advancedbreak": "~0.0.1"
+    "jquery.advancedbreak": "~0.0.1",
+    "jquery-mousewheel": "~3.1.12",
+    "jquery_nicescroll": "~0.9.9"
   }
 }
 
