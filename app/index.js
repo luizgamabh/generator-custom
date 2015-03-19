@@ -83,6 +83,7 @@ module.exports = yeoman.generators.Base.extend({
       this.includeModernizr = hasFeature('includeModernizr');
       this.includeSelectivizr = hasFeature('includeSelectivizr');
       this.includeCustom = hasFeature('includeCustom');
+      this.includePerfectScrollbar = hasFeature('includePerfectScrollbar');
       this.includeJQueryEasing = hasFeature('includeJQueryEasing');
       this.includeJQueryBezier = hasFeature('includeJQueryBezier');
       this.includeJQueryMousewheel = hasFeature('includeJQueryMousewheel');
@@ -105,8 +106,8 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   git: function () {
-    this.template('gitignore', '.gitignore');
-    this.copy('gitattributes', '.gitattributes');
+    this.template('h5bp/gitignore', '.gitignore');
+    this.copy('h5bp/gitattributes', '.gitattributes');
   },
 
   bower: function () {
@@ -116,19 +117,47 @@ module.exports = yeoman.generators.Base.extend({
       dependencies: {}
     };
 
-    if (this.includeBootstrap) {
-      var bs = 'bootstrap-sass-official' : '');
-      bower.dependencies[bs] = '~3.2.0';
-    } else {
-      bower.dependencies.jquery = '~1.11.1';
-    }
+    bower.dependencies.jquery = '~1.11.1';
 
-    if (this.includeModernizr) {
-      bower.dependencies.modernizr = '~2.8.2';
+    if (this.includeCustom) {
+      bower.dependencies['custom.gs'] = '~2.1.1';
+    }
+    if (this.includeJQueryAdvancedBreak) {
+      bower.dependencies['jquery.advancedbreak'] = "~0.0.1";
+    }
+    if (this.includeJQueryAdvancedScroll) {
+      bower.dependencies['jquery.advancedscroll'] = "~0.0.1";
+    }
+    if (this.includePerfectScrollbar) {
+      bower.dependencies['perfect-scrollbar'] = "~0.6.1";
+    }
+    if (this.includeJQueryBezier) {
+      bower.dependencies['jquery-bez'] = "rdallasgray/bez#~1.0.11"
+    }
+    if (this.includeJQueryEasing) {
+      bower.dependencies['jquery.easing'] = "~1.3.1";
+    }
+    if (this.includeJQueryHotkeys) {
+      bower.dependencies['jquery.hotkeys'] = "jeresig/jquery.hotkeys#~0.2.0";
+    }
+    if (this.includeJQueryMousewheel) {
+      bower.dependencies['jquery-mousewheel'] = "~3.1.12";
+    }
+    if (this.includeNicescroll) {
+      bower.dependencies['jquery_nicescroll'] = "~0.9.9";
+    }
+    if (this.includeUniqueId) {
+      bower.dependencies['uniqueid'] = "~0.0.1";
     }
 
     this.copy('bowerrc', '.bowerrc');
     this.write('bower.json', JSON.stringify(bower, null, 2));
+  },
+
+  modernizr: function() {
+    if (this.includeModernizr) {
+      this.copy('h5bp/js/vendor/modernizr-2.8.3.min.js', 'resources/js/vendor/modernizr-2.8.3.min.js')
+    }
   },
 
   jshint: function () {
