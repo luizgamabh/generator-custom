@@ -34,9 +34,9 @@ module.exports = function (grunt) {
         },
         files: {
           <% if (includeModernizr) { %>
-          'dist/assets/js/header.js': jsHeaderFiles,
+          'dist/assets/js/header.js': this.jsHeaderFiles,
           <% } %>
-          'dist/assets/js/footer.js': jsFooterFiles
+          'dist/assets/js/footer.js': this.jsFooterFiles
           <% if (includeSelectivizr) { %>
           ,'dist/assets/js/ie.js' : [
               '<% bower.directory %>/lt-ie-9/lt-ie-9.js'
@@ -57,8 +57,8 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'dev/assets/js/header.js': jsHeaderFiles
-          , 'dev/assets/js/footer.js': jsFooterFiles
+          'dev/assets/js/header.js': this.jsHeaderFiles
+          , 'dev/assets/js/footer.js': this.jsFooterFiles
           <% if (includeSelectivizr) { %>
           ,'dev/assets/js/ie.js' : [
               '<% bower.directory %>/lt-ie-9/lt-ie-9.js'
