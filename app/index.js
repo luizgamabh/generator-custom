@@ -24,7 +24,7 @@ module.exports = yeoman.generators.Base.extend({
     var prompts = [{
     type: 'list',
     name: 'features',
-    message: 'Select the features you would like to add',
+    message: 'Select the features you would like to enable',
     choices: [{
       name: 'Modernizr',
       value: 'includeModernizr',
@@ -32,7 +32,7 @@ module.exports = yeoman.generators.Base.extend({
     },{
       name: 'Selectivizr',
       value: 'includeSelectivizr',
-      checked: true
+      checked: false
     },{
       name: 'Custom Grid System',
       value: 'includeCustom',
@@ -106,7 +106,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   git: function () {
-    this.template('h5bp/gitignore', '.gitignore');
+    this.copy('h5bp/gitignore', '.gitignore');
     this.copy('h5bp/gitattributes', '.gitattributes');
   },
 
@@ -165,63 +165,32 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   editorConfig: function () {
-    this.copy('editorconfig', '.editorconfig');
+    this.copy('h5bp/editorconfig', '.editorconfig');
   },
 
   mainStylesheet: function () {
-    var css = 'main.sass';
-    this.template(css, 'app/styles/' + css);
+    this.mkdir('resources/sass');
+    this.directory('h5bp/sass/structure', 'resources/sass');
+    this.copy('h5bp/sass/_normalize.scss', 'resources/sass/generic/_normalize.scss');
+    this.copy('h5bp/sass/_initialize.sass', 'resources/sass/_initialize.sass');
+    this.template('h5bp/sass/main.scss', 'resources/sass/main.scss');
   },
 
   writeIndex: function () {
-    this.indexFile = this.engine(
-      this.readFileAsString(join(this.sourceRoot(), 'index.html')),
-      this
-    );
-
-    // wire Bootstrap plugins
-    if (this.includeBootstrap) {
-      var bs = 'bower_components/bootstrap/js/';
-
-      this.indexFile = this.appendFiles({
-        html: this.indexFile,
-        fileType: 'js',
-        optimizedPath: 'scripts/plugins.js',
-        sourceFileList: [
-          bs + 'affix.js',
-          bs + 'alert.js',
-          bs + 'dropdown.js',
-          bs + 'tooltip.js',
-          bs + 'modal.js',
-          bs + 'transition.js',
-          bs + 'button.js',
-          bs + 'popover.js',
-          bs + 'carousel.js',
-          bs + 'scrollspy.js',
-          bs + 'collapse.js',
-          bs + 'tab.js'
-        ],
-        searchPath: '.'
-      });
-    }
-
-    this.indexFile = this.appendFiles({
-      html: this.indexFile,
-      fileType: 'js',
-      optimizedPath: 'scripts/main.js',
-      sourceFileList: ['scripts/main.js'],
-      searchPath: ['app', '.tmp']
-    });
+    this.template('h5bp/index.html', 'index.html');
   },
 
   app: function () {
-    this.directory('app');
-    this.mkdir('app/scripts');
-    this.mkdir('app/styles');
-    this.mkdir('app/images');
-    this.write('app/index.html', this.indexFile);
-
-    this.copy('main.js', 'app/scripts/main.js');
+    this.mkdir('dist');
+    this.mkdir('dev');
+    this.mkdir('resources/img');
+    this.mkdir('resources/sprite');
+    this.mkdir('resources/font');
+    this.mkdir('resources/copy');
+    this.mkdir('resources/html');
+    this.mkdir('resources/js');
+    this.copy('h5bp/js/main.js', 'resources/js/plugins.js');
+    this.copy('h5bp/js/main.js', 'resources/js/main.js');
   },
 
   install: function () {
