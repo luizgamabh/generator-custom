@@ -100,7 +100,7 @@ textarea {
 @import "tools/**/*";
 @import "generic/**/*";
 @import "vendor/**/*";
-<% if (includedCustom) { %>
+<% if (includeCustom) { %>
 @import "../bower_components/custom.gs/custom"
 <% } %>
 @import "base/**/*";

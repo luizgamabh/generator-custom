@@ -22,7 +22,7 @@ module.exports = yeoman.generators.Base.extend({
     }
 
     var prompts = [{
-    type: 'list',
+    type: 'checkbox',
     name: 'features',
     message: 'Select the features you would like to enable',
     choices: [{
