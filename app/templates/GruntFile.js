@@ -11,14 +11,14 @@ module.exports = function (grunt) {
     ],
     <% } %>
     jsFooterFiles: [
-      <% if (includeJQueryEasing) { %>'<%= bower.directory %>/jquery.easing/js/jquery.easing.js'<% } %>
-      <% if (includeJQueryBezier) { %>,'<%= bower.directory %>/jquery-bez/jquery.bez.min.js'<% } %>
-      <% if (includeJQueryMousewheel) { %>,'<%= bower.directory %>/jquery-mousewheel/jquery.mousewheel.js'<% } %>
-      <% if (includeNicescroll) { %>,'<%= bower.directory %>/jquery-mousewheel/jquery.mousewheel.js'<% } %>
-      <% if (includeJQueryHotkeys) { %>,'<%= bower.directory %>/jquery.hotkeys/jquery.hotkeys.js'<% } %>
-      <% if (includeUniqueId) { %>,'<%= bower.directory %>/uniqueid/unique_id.js'<% } %>
-      <% if (includeJQueryAdvancedScroll) { %>,'<%= bower.directory %>/jquery.advancedscroll/jquery.advancedScroll.js'<% } %>
-      <% if (includeJQueryAdvancedBreak) { %>,'<%= bower.directory %>/jquery.advancedbreak/jquery.advancedBreak.js'<% } %>
+      <% if (includeJQueryEasing) { %>'<%%= bower.directory %>/jquery.easing/js/jquery.easing.js'<% } %>
+      <% if (includeJQueryBezier) { %>,'<%%= bower.directory %>/jquery-bez/jquery.bez.min.js'<% } %>
+      <% if (includeJQueryMousewheel) { %>,'<%%= bower.directory %>/jquery-mousewheel/jquery.mousewheel.js'<% } %>
+      <% if (includeNicescroll) { %>,'<%%= bower.directory %>/jquery_nicescroll/nicescroll.js'<% } %>
+      <% if (includeJQueryHotkeys) { %>,'<%%= bower.directory %>/jquery.hotkeys/jquery.hotkeys.js'<% } %>
+      <% if (includeUniqueId) { %>,'<%%= bower.directory %>/uniqueid/unique_id.js'<% } %>
+      <% if (includeJQueryAdvancedScroll) { %>,'<%%= bower.directory %>/jquery.advancedscroll/jquery.advancedScroll.js'<% } %>
+      <% if (includeJQueryAdvancedBreak) { %>,'<%%= bower.directory %>/jquery.advancedbreak/jquery.advancedBreak.js'<% } %>
       ,'resources/js/plugins.js'
       ,'resources/js/main.js'
     ],

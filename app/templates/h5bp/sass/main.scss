@@ -95,13 +95,13 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-@import "initializer";
+@import "initialize";
 @import "settings/**/*";
 @import "tools/**/*";
 @import "generic/**/*";
 @import "vendor/**/*";
 <% if (includeCustom) { %>
-@import "../../bower_components/custom.gs/custom"
+@import "../../bower_components/custom.gs/custom";
 <% } %>
 @import "base/**/*";
 @import "objects/**/*";

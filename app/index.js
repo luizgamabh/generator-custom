@@ -66,8 +66,12 @@ module.exports = yeoman.generators.Base.extend({
       value: 'includeJQueryAdvancedScroll',
       checked: false
     },{
-      name: 'jQuery Advanced Break',
-      value: 'includeJQueryAdvancedBreak',
+      name: 'jQuery Advanced Scroll',
+      value: 'includeJQueryAdvancedScroll',
+      checked: false
+    },{
+      name: 'Perfect Scrollbar',
+      value: 'includePerfectScrollbar',
       checked: false
     }]
     }];
@@ -95,6 +99,11 @@ module.exports = yeoman.generators.Base.extend({
 
       done();
     }.bind(this));
+  },
+
+  compassConfigs: function() {
+    this.copy('_compass-dev.rb', 'compass-dev.rb');
+    this.copy('_compass-dist.rb', 'compass-dist.rb');
   },
 
   gruntfile: function () {
@@ -176,8 +185,12 @@ module.exports = yeoman.generators.Base.extend({
     this.template('h5bp/sass/main.scss', 'resources/sass/main.scss');
   },
 
+  rootFiles: function() {
+  	this.directory('h5bp/root_path', 'resources/copy');
+  },
+
   writeIndex: function () {
-    this.template('h5bp/index.html', 'index.html');
+    this.template('h5bp/index.html', 'resources/html/index.html');
   },
 
   app: function () {
@@ -189,7 +202,7 @@ module.exports = yeoman.generators.Base.extend({
     this.mkdir('resources/copy');
     this.mkdir('resources/html');
     this.mkdir('resources/js');
-    this.copy('h5bp/js/main.js', 'resources/js/plugins.js');
+    this.copy('h5bp/js/plugins.js', 'resources/js/plugins.js');
     this.copy('h5bp/js/main.js', 'resources/js/main.js');
   },
 
