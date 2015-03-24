@@ -1,27 +1,28 @@
 'use strict';
 
 module.exports = function (grunt) {
+  var bower = grunt.file.readJSON('.bowerrc'),
+  <% if (includeModernizr) { %>
+  jsHeaderFiles = [
+      'resources/js/vendor/modernizr-2.8.3.min.js'
+  ],
+  <% } %>
+  jsFooterFiles = [
+    <% if (includeJQueryEasing) { %>bower.directory+'/jquery.easing/js/jquery.easing.js'<% } %>
+    <% if (includeJQueryBezier) { %>,bower.directory+'/jquery-bez/jquery.bez.min.js'<% } %>
+    <% if (includeJQueryMousewheel) { %>,bower.directory+'/jquery-mousewheel/jquery.mousewheel.js'<% } %>
+    <% if (includeNicescroll) { %>,bower.directory+'/jquery_nicescroll/nicescroll.js'<% } %>
+    <% if (includeJQueryHotkeys) { %>,bower.directory+'/jquery.hotkeys/jquery.hotkeys.js'<% } %>
+    <% if (includeUniqueId) { %>,bower.directory+'/uniqueid/unique_id.js'<% } %>
+    <% if (includeJQueryAdvancedScroll) { %>,bower.directory+'/jquery.advancedscroll/jquery.advancedScroll.js'<% } %>
+    <% if (includeJQueryAdvancedBreak) { %>,bower.directory+'/jquery.advancedbreak/jquery.advancedBreak.js'<% } %>
+    ,'resources/js/plugins.js'
+    ,'resources/js/main.js'
+  ];
+
   require('time-grunt')(grunt);
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    bower: grunt.file.readJSON('.bowerrc'),
-    <% if (includeModernizr) { %>
-    jsHeaderFiles: [
-      'resources/js/vendor/modernizr-2.8.3.min.js'
-    ],
-    <% } %>
-    jsFooterFiles: [
-      <% if (includeJQueryEasing) { %>'<%%= bower.directory %>/jquery.easing/js/jquery.easing.js'<% } %>
-      <% if (includeJQueryBezier) { %>,'<%%= bower.directory %>/jquery-bez/jquery.bez.min.js'<% } %>
-      <% if (includeJQueryMousewheel) { %>,'<%%= bower.directory %>/jquery-mousewheel/jquery.mousewheel.js'<% } %>
-      <% if (includeNicescroll) { %>,'<%%= bower.directory %>/jquery_nicescroll/nicescroll.js'<% } %>
-      <% if (includeJQueryHotkeys) { %>,'<%%= bower.directory %>/jquery.hotkeys/jquery.hotkeys.js'<% } %>
-      <% if (includeUniqueId) { %>,'<%%= bower.directory %>/uniqueid/unique_id.js'<% } %>
-      <% if (includeJQueryAdvancedScroll) { %>,'<%%= bower.directory %>/jquery.advancedscroll/jquery.advancedScroll.js'<% } %>
-      <% if (includeJQueryAdvancedBreak) { %>,'<%%= bower.directory %>/jquery.advancedbreak/jquery.advancedBreak.js'<% } %>
-      ,'resources/js/plugins.js'
-      ,'resources/js/main.js'
-    ],
     uglify: {
       dist: {
         options: {
@@ -30,13 +31,14 @@ module.exports = function (grunt) {
           compress: false,
           wrap: false,
           exportAll: false,
-          beautify: false
+          beautify: false,
+          sourceMap: true
         },
         files: {
           <% if (includeModernizr) { %>
-          'dist/assets/js/header.js': this.jsHeaderFiles,
+          'dist/assets/js/header.js': jsHeaderFiles,
           <% } %>
-          'dist/assets/js/footer.js': this.jsFooterFiles
+          'dist/assets/js/footer.js': jsFooterFiles
           <% if (includeSelectivizr) { %>
           ,'dist/assets/js/ie.js' : [
               '<% bower.directory %>/lt-ie-9/lt-ie-9.js'
@@ -54,11 +56,12 @@ module.exports = function (grunt) {
           beautify: {
             width: 80,
             beautify: true
-          }
+          },
+          sourceMap: true
         },
         files: {
-          'dev/assets/js/header.js': this.jsHeaderFiles
-          , 'dev/assets/js/footer.js': this.jsFooterFiles
+          'dev/assets/js/header.js': jsHeaderFiles
+          , 'dev/assets/js/footer.js': jsFooterFiles
           <% if (includeSelectivizr) { %>
           ,'dev/assets/js/ie.js' : [
               '<% bower.directory %>/lt-ie-9/lt-ie-9.js'
