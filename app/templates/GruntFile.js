@@ -82,15 +82,15 @@ module.exports = function (grunt) {
           },
           {
             expand: true,
-            cwd: 'resources/copies/',
+            cwd: 'resources/copy/',
             src: '**',
             dest: 'dev/'
           },
           {
             expand: true,
-            cwd: 'resources/fonts/',
+            cwd: 'resources/font/',
             src: '**',
-            dest: 'dev/assets/fonts/'
+            dest: 'dev/assets/font/'
           }
         ]
       },
@@ -104,15 +104,15 @@ module.exports = function (grunt) {
           },
           {
             expand: true,
-            cwd: 'resources/copies/',
+            cwd: 'resources/copy/',
             src: '**',
             dest: 'dist/'
           },
           {
             expand: true,
-            cwd: 'resources/fonts/',
+            cwd: 'resources/font/',
             src: '**',
-            dest: 'dist/assets/fonts/'
+            dest: 'dist/assets/font/'
           }
         ]
       }
@@ -196,8 +196,8 @@ module.exports = function (grunt) {
     watch: {
       configs: {
         files: [
-          'resources/copies/**/*.*',
-          'resources/fonts/**/*',
+          'resources/copy/**/*.*',
+          'resources/font/**/*',
           'resources/js/vendor/**/*'
         ],
         options: {

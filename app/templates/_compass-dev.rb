@@ -8,9 +8,9 @@ sass_dir = "./resources/sass/"
 images_dir = "./dev/assets/img/"
 #images_path = "./dev/assets/img/"
 #http_images_dir = "./dev/assets/img/"
-sprite_load_path = "./resources/sprites/"
+sprite_load_path = "./resources/sprite/"
 javascripts_dir = "./dev/assets/js/"
-fonts_dir = "./dev/assets/fonts/"
+fonts_dir = "./dev/assets/font/"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

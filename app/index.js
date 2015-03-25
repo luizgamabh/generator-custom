@@ -106,6 +106,10 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('_compass-dist.rb', 'compass-dist.rb');
   },
 
+  runFonts: function() {
+  	this.copy('runfonts.sh');
+  }
+
   gruntfile: function () {
     this.template('Gruntfile.js');
   },
