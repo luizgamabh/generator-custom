@@ -108,7 +108,7 @@ module.exports = yeoman.generators.Base.extend({
 
   runFonts: function() {
   	this.copy('runfonts.sh');
-  }
+  },
 
   gruntfile: function () {
     this.template('Gruntfile.js');
