@@ -14,7 +14,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "preinstall": "gem install sass compass --no-ri --no-rdoc && npm install -g grunt-cli yo"
   },
   "files": [
     "app"

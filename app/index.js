@@ -188,7 +188,6 @@ module.exports = yeoman.generators.Base.extend({
   mainStylesheet: function () {
     this.mkdir('resources/sass');
     this.directory('h5bp/sass/structure', 'resources/sass');
-    this.copy('h5bp/sass/_normalize.scss', 'resources/sass/generic/_normalize.scss');
     this.copy('h5bp/sass/_initialize.sass', 'resources/sass/_initialize.sass');
     this.template('h5bp/sass/main.scss', 'resources/sass/main.scss');
   },
