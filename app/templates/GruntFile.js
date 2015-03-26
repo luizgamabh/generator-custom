@@ -84,7 +84,8 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'resources/copy/',
             src: '**',
-            dest: 'dev/'
+            dest: 'dev/',
+            dot: true
           },
           {
             expand: true,
@@ -106,7 +107,8 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'resources/copy/',
             src: '**',
-            dest: 'dist/'
+            dest: 'dist/',
+            dot: true
           },
           {
             expand: true,
@@ -201,7 +203,8 @@ module.exports = function (grunt) {
           'resources/js/vendor/**/*'
         ],
         options: {
-          livereload: false
+          livereload: false,
+          dot: true
         },
         tasks: ['copy:dev']
       },

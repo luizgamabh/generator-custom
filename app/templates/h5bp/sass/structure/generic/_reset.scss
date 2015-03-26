@@ -1,0 +1,13 @@
+//------------------------------------*\
+//    #CSS Reset from Compass
+//------------------------------------*/
+
+//
+// Stop iOS from changing font sizes according to viewport
+//
+html {
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+@import "compass/reset";
