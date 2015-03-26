@@ -120,7 +120,7 @@ module.exports = yeoman.generators.Base.extend({
 
   htAccess: function() {
     this.copy('h5bp/htaccess', 'resources/copy/.htaccess');
-  }
+  },
 
   git: function () {
     this.copy('h5bp/gitignore', '.gitignore');
