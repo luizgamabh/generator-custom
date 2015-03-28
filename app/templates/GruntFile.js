@@ -12,6 +12,7 @@ module.exports = function (grunt) {
     <% if (includeJQueryBezier) { %>,bower.directory+'/jquery-bez/jquery.bez.min.js'<% } %>
     <% if (includeJQueryMousewheel) { %>,bower.directory+'/jquery-mousewheel/jquery.mousewheel.js'<% } %>
     <% if (includeNicescroll) { %>,bower.directory+'/jquery_nicescroll/nicescroll.js'<% } %>
+    <% if (this.includePerfectScrollbar) { %>,bower.directory+'/perfect-scrollbar/js/perfect-scrollbar.jquery.js'<% } %>
     <% if (includeJQueryHotkeys) { %>,bower.directory+'/jquery.hotkeys/jquery.hotkeys.js'<% } %>
     <% if (includeUniqueId) { %>,bower.directory+'/uniqueid/unique_id.js'<% } %>
     <% if (includeJQueryAdvancedScroll) { %>,bower.directory+'/jquery.advancedscroll/jquery.advancedScroll.js'<% } %>

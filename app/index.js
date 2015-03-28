@@ -62,8 +62,8 @@ module.exports = yeoman.generators.Base.extend({
       value: 'includeUniqueId',
       checked: false
     },{
-      name: 'jQuery Advanced Scroll',
-      value: 'includeJQueryAdvancedScroll',
+      name: 'jQuery Advanced Break',
+      value: 'includeJQueryAdvancedBreak',
       checked: false
     },{
       name: 'jQuery Advanced Scroll',
@@ -94,8 +94,8 @@ module.exports = yeoman.generators.Base.extend({
       this.includeNicescroll = hasFeature('includeNicescroll');
       this.includeJQueryHotkeys = hasFeature('includeJQueryHotkeys');
       this.includeUniqueId = hasFeature('includeUniqueId');
-      this.includeJQueryAdvancedScroll = hasFeature('includeJQueryAdvancedScroll');
       this.includeJQueryAdvancedBreak = hasFeature('includeJQueryAdvancedBreak');
+      this.includeJQueryAdvancedScroll = hasFeature('includeJQueryAdvancedScroll');
 
       done();
     }.bind(this));
