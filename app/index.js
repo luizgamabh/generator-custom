@@ -73,6 +73,10 @@ module.exports = yeoman.generators.Base.extend({
       name: 'Perfect Scrollbar',
       value: 'includePerfectScrollbar',
       checked: false
+    },{
+      name: 'Include Media (Mixin for media queries)',
+      value: 'includeIncludeMedia',
+      checked: true
     }]
     }];
 
@@ -96,6 +100,7 @@ module.exports = yeoman.generators.Base.extend({
       this.includeUniqueId = hasFeature('includeUniqueId');
       this.includeJQueryAdvancedBreak = hasFeature('includeJQueryAdvancedBreak');
       this.includeJQueryAdvancedScroll = hasFeature('includeJQueryAdvancedScroll');
+      this.includeIncludeMedia = hasFeature('includeIncludeMedia');
 
       done();
     }.bind(this));
@@ -165,6 +170,9 @@ module.exports = yeoman.generators.Base.extend({
     }
     if (this.includeUniqueId) {
       bower.dependencies['uniqueid'] = "~0.0.1";
+    }
+    if (this.includeIncludeMedia) {
+      bower.dependencies['include-media'] = "~1.1.2";
     }
 
     this.copy('bowerrc', '.bowerrc');
