@@ -142,7 +142,7 @@ module.exports = yeoman.generators.Base.extend({
     bower.dependencies.jquery = '~1.11.1';
 
     if (this.includeCustom) {
-      bower.dependencies['custom.gs'] = '~2.1.2';
+      bower.dependencies['custom.gs'] = '~2.2.1';
     }
     if (this.includeJQueryAdvancedBreak) {
       bower.dependencies['jquery.advancedbreak'] = "~0.0.1";
