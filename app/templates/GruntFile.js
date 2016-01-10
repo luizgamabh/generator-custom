@@ -2,28 +2,60 @@
 
 module.exports = function (grunt) {
   var bower = grunt.file.readJSON('.bowerrc'),
-  <% if (includeModernizr) { %>
-  jsHeaderFiles = [
-      'resources/js/vendor/modernizr-2.8.3.min.js'
-  ],
-  <% } %>
-  jsFooterFiles = [
-    <% if (includeJQueryEasing) { %>bower.directory+'/jquery.easing/js/jquery.easing.js'<% } %>
-    <% if (includeJQueryBezier) { %>,bower.directory+'/jquery-bez/jquery.bez.min.js'<% } %>
-    <% if (includeJQueryMousewheel) { %>,bower.directory+'/jquery-mousewheel/jquery.mousewheel.js'<% } %>
-    <% if (includeNicescroll) { %>,bower.directory+'/jquery_nicescroll/nicescroll.js'<% } %>
-    <% if (this.includePerfectScrollbar) { %>,bower.directory+'/perfect-scrollbar/js/perfect-scrollbar.jquery.js'<% } %>
-    <% if (includeJQueryHotkeys) { %>,bower.directory+'/jquery.hotkeys/jquery.hotkeys.js'<% } %>
-    <% if (includeUniqueId) { %>,bower.directory+'/uniqueid/unique_id.js'<% } %>
-    <% if (includeJQueryAdvancedScroll) { %>,bower.directory+'/jquery.advancedscroll/jquery.advancedScroll.js'<% } %>
-    <% if (includeJQueryAdvancedBreak) { %>,bower.directory+'/jquery.advancedbreak/jquery.advancedBreak.js'<% } %>
-    ,'resources/js/plugins.js'
-    ,'resources/js/main.js'
-  ];
+    jsHeaderFiles = [], jsFooterFiles = [];
+  // Header
+  <% if (includeModernizr) { %>jsHeaderFiles[] = 'resources/js/vendor/modernizr-custom.js';<% } %>
+
+  // Footer
+  <% if (includeJQueryEasing) { %>jsFooterFiles[] = bower.directory+'/jquery.easing/js/jquery.easing.js';<% } %>
+  <% if (includeJQueryBezier) { %>jsFooterFiles[] = bower.directory+'/jquery-bez/jquery.bez.min.js';<% } %>
+  <% if (includeJQueryMousewheel) { %>jsFooterFiles[] = bower.directory+'/jquery-mousewheel/jquery.mousewheel.js';<% } %>
+  <% if (includeNicescroll) { %>jsFooterFiles[] = bower.directory+'/jquery_nicescroll/nicescroll.js';<% } %>
+  <% if (this.includePerfectScrollbar) { %>jsFooterFiles[] = bower.directory+'/perfect-scrollbar/js/perfect-scrollbar.jquery.js';<% } %>
+  <% if (includeJQueryHotkeys) { %>jsFooterFiles[] = bower.directory+'/jquery.hotkeys/jquery.hotkeys.js';<% } %>
+  <% if (includeUniqueId) { %>jsFooterFiles[] = bower.directory+'/uniqueid/unique_id.js';<% } %>
+  <% if (includeJQueryAdvancedScroll) { %>jsFooterFiles[] = bower.directory+'/jquery.advancedscroll/jquery.advancedScroll.js';<% } %>
+  <% if (includeJQueryAdvancedBreak) { %>jsFooterFiles[] = bower.directory+'/jquery.advancedbreak/jquery.advancedBreak.js';<% } %>
+  jsFooterFiles[] = 'resources/js/plugins.js';
+  jsFooterFiles[] = 'resources/js/main.js';
 
   require('time-grunt')(grunt);
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    <% if (includeModernizr) { %>
+    modernizr_builder: {
+      build: {
+        options: {
+          config: bower.directory+'/modernizr/lib/config-all.json',
+            dest: bower.directory+'/modernizr/dist/modernizr-custom.js'
+        }
+      }
+    },
+    modernizr: {
+      dist: {
+        devFile: bower.directory+"/modernizr/dist/modernizr-custom.js",
+        outputFile: "dist/assets/js/vendor/modernizr-custom.js",
+        parseFiles: true,
+        customTests: [],
+        //tests: [
+          // Tests
+        //],
+        //extra: {
+        //  'shiv' : true,
+        //    'printshiv' : false,
+        //    'load' : true,
+        //    'mq' : false,
+        //    'cssclasses' : true
+        //},
+        extensibility: [
+          "setClasses"
+        ],
+        uglify: true
+      }
+    },
+    %>
     uglify: {
       dist: {
         options: {
@@ -252,6 +284,10 @@ module.exports = function (grunt) {
     }
   });
 
+  <% if (includeModernizr) { %>
+  grunt.loadNpmTasks('grunt-modernizr-builder');
+  grunt.loadNpmTasks('grunt-modernizr');
+  <% } %>
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');

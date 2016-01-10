@@ -111,8 +111,9 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('_compass-dist.rb', 'compass-dist.rb');
   },
 
-  runFonts: function() {
-  	this.copy('runfonts.sh');
+  genFonts: function() {
+  	this.copy('genfonts.sh');
+    this.copy('webify.exe');
   },
 
   gruntfile: function () {
@@ -141,8 +142,11 @@ module.exports = yeoman.generators.Base.extend({
 
     bower.dependencies.jquery = '~1.11.1';
 
+    if (this.includeModernizr) {
+      bower.dependencies['modernizr'] = '~3.2.0';
+    }
     if (this.includeCustom) {
-      bower.dependencies['custom.gs'] = '~2.2.1';
+      bower.dependencies['custom.gs'] = '~2.3.0';
     }
     if (this.includeJQueryAdvancedBreak) {
       bower.dependencies['jquery.advancedbreak'] = "~0.0.1";
@@ -151,19 +155,19 @@ module.exports = yeoman.generators.Base.extend({
       bower.dependencies['jquery.advancedscroll'] = "~0.0.1";
     }
     if (this.includePerfectScrollbar) {
-      bower.dependencies['perfect-scrollbar'] = "~0.6.1";
+      bower.dependencies['perfect-scrollbar'] = "~0.6.8";
     }
     if (this.includeJQueryBezier) {
-      bower.dependencies['jquery-bez'] = "rdallasgray/bez#~1.0.11"
+      bower.dependencies['jquery-bez'] = "~1.0.11"
     }
     if (this.includeJQueryEasing) {
       bower.dependencies['jquery.easing'] = "~1.3.1";
     }
     if (this.includeJQueryHotkeys) {
-      bower.dependencies['jquery.hotkeys'] = "jeresig/jquery.hotkeys#~0.2.0";
+      bower.dependencies['jQuery.Hotkeys'] = "~0.2.0";
     }
     if (this.includeJQueryMousewheel) {
-      bower.dependencies['jquery-mousewheel'] = "~3.1.12";
+      bower.dependencies['jquery-mousewheel'] = "~3.1.13";
     }
     if (this.includeNicescroll) {
       bower.dependencies['jquery_nicescroll'] = "~0.9.9";
@@ -172,18 +176,18 @@ module.exports = yeoman.generators.Base.extend({
       bower.dependencies['uniqueid'] = "~0.0.1";
     }
     if (this.includeIncludeMedia) {
-      bower.dependencies['include-media'] = "~1.1.2";
+      bower.dependencies['include-media'] = "~1.4.2";
     }
 
     this.copy('bowerrc', '.bowerrc');
     this.write('bower.json', JSON.stringify(bower, null, 2));
   },
 
-  modernizr: function() {
-    if (this.includeModernizr) {
-      this.copy('h5bp/js/vendor/modernizr-2.8.3.min.js', 'resources/js/vendor/modernizr-2.8.3.min.js')
-    }
-  },
+  // modernizr: function() {
+  //   if (this.includeModernizr) {
+  //     this.copy('h5bp/js/vendor/modernizr-2.8.3.min.js', 'resources/js/vendor/modernizr-2.8.3.min.js')
+  //   }
+  // },
 
   jshint: function () {
     this.copy('jshintrc', '.jshintrc');
